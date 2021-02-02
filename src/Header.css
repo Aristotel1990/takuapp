@@ -1,0 +1,6 @@
+.header a{
+    height: 60px;
+    display: inline-block;
+    padding: 5px;
+    justify-content: space-between;
+}
