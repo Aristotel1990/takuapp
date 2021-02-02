@@ -31,7 +31,7 @@ function ModalFalse(record) {
 
     const onFinish = (values) => {
     const pako={...values.user,user:user}  
-     axios.post('http://localhost:3090/edit',pako)
+     axios.post('https://taku-app.herokuapp.com//edit',pako)
       dispatch({
         type:'UPDATE',
         item:pako

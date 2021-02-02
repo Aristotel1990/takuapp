@@ -20,7 +20,7 @@ function NewTable({history}) {
   </Popover>),action1:(<div>{user===record.user ?(<div ><ModalData history={history} record={record}/>{" "}
     <Popconfirm 
     onConfirm={()=>{
-     axios.post(`http://localhost:3090/${record._id}`)
+     axios.post(`https://taku-app.herokuapp.com//${record._id}`)
      dispatch({
       type:'DELETE_ITEM',
       id:record._id
@@ -139,7 +139,7 @@ useEffect(() => {
     history.push('/')
   }else{
    
-      const response = await axios.get('http://localhost:3090/data');
+      const response = await axios.get('https://taku-app.herokuapp.com//data');
       dispatch({type:'MERR_TEDHENA',item:response.data,user:localStorage.getItem('user')})
       console.log('teli')
       

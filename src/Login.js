@@ -23,7 +23,7 @@ function Login({history}) {
 
     const onFinish =async (values) =>{
 
-        const response = await axios.post('http://localhost:3090/signin',values);
+        const response = await axios.post('https://taku-app.herokuapp.com//signin',values);
         localStorage.setItem('token',response.data.token)
         localStorage.setItem('user',response.data.user.username)  
        
