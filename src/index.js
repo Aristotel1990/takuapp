@@ -11,7 +11,6 @@ import Login from './Login';
 import SignUp from './SignUp';
 import NewTable from './NewTable';
 import DateCompare from './DateCompare';
-import MenuAppBar from './HeaderTemp';
 
 ReactDOM.render(
      <StateProvider initialState={initialState} reducer={reducer}>
@@ -22,7 +21,6 @@ ReactDOM.render(
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/feature" component={NewTable}/>
         <Route axact path="/comp" component={DateCompare}/>
-        <Route axact path="/ttt" component={MenuAppBar}/>
       </App>
       </Router>
     </StateProvider>,
