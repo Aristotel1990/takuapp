@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import 'antd/dist/antd.css';
 import { useStateValue } from "./StateProvider";
 import { Form, Input, Button, Checkbox } from 'antd';
-import "./Login.css";
+import './shtim.css';
 import axios from 'axios';
 const layout = {
     labelCol: {
@@ -41,7 +41,10 @@ function SignUp({history}){
       };
     
       return (
-          <div className="login">
+        <div className="container-fluid" >
+        <div className="row mh-100vh">
+          <div className="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 offset-lg-0 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0" id="login-block">
+            <div className="m-auto w-lg-75 w-xl-50">
 <Form
           {...layout}
           name="basic"
@@ -87,7 +90,11 @@ function SignUp({history}){
             </Button>
           </Form.Item>
         </Form>
+        </div>
+            </div>
           </div>
+             
+        </div>
         
       );
 }

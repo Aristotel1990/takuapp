@@ -12,6 +12,7 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import FalseStatus from './FalseStatus';
 import Shtim from './Shtim';
 import moment from'moment';
+import './newtable.css';
 
 function NewTable({history}) {
     const [{ basket, user,token }, dispatch] = useStateValue();
@@ -153,7 +154,7 @@ useEffect(() => {
 
 
     return<>
-  <div>{bbb.length>0 ?(<div><Alert
+  <div className="home">{bbb.length>0 ?(<div><Alert
       message="Info Text"
       description="Ke reminder per bizneset"
       type="info"
@@ -167,14 +168,16 @@ useEffect(() => {
       closable
     />
     <h1></h1>
-    <Shtim/>
+   
     <MDBDataTable
-    striped
+    striped 
     bordered
     hover
     data={data}
-    /> </div>):(<div> <Shtim/>
+    /> </div>):(<div className="home"
+    > 
       <MDBDataTable
+
       striped
       bordered
       hover

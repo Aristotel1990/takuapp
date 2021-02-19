@@ -53,11 +53,13 @@ function ModalData({record,history}) {
   };
     return (
         <>
+      
           <Button type="ghost" onClick={showModal}>
             Edit
           </Button>
-        <Modal title="Basic Modal" visible={isModalVisible} onCancel={handleCancel} onOk={()=> setIsModalVisible(false)}>
-          <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+          
+          <Modal  title="Basic Modal" visible={isModalVisible} onCancel={handleCancel} onOk={()=> setIsModalVisible(false)}>
+          <Form  {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
           <Form.Item
             name={'emri'}
             label="Emri"
@@ -122,6 +124,8 @@ function ModalData({record,history}) {
 
         </Form>
           </Modal>
+         
+        
         </>
       );
     };

@@ -16,7 +16,6 @@ ReactDOM.render(
      <StateProvider initialState={initialState} reducer={reducer}>
        <Router>
       <App >
-        <Route exact path="/" />
         <Route exact path="/signin" component={Login}/>    
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/feature" component={NewTable}/>

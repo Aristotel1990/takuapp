@@ -1,6 +1,75 @@
-.header a{
-    height: 60px;
-    display: inline-block;
-    padding: 5px;
-    justify-content: space-between;
+img {
+  position: relative;
+  border: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.pl {
+  width: 250px;
+  height: 50px;
+  margin: 5px 0 0 20px;
+}
+.dmenu {
+  position: relative;
+  float: left;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+  min-height: 50px;
+}
+.db {
+  background-color: #303540;
+}
+.menuleft {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  width: 20%;
+}
+.menuleft a:hover {
+  color: #ffc107;
+}
+.menuleft h1 {
+  color: cornsilk;
+}
+.menuright {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  width: 80%;
+  line-height: 60px;
+}
+.menu1link {
+  position: relative;
+  float: right;
+  list-style: none;
+  height: 60px;
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+.menu1link li {
+  position: relative;
+  float: left;
+  list-style: none;
+  display: block;
+  margin: 0 8px;
+  line-height: 60px;
+}
+.menu1link li a {
+  color: #fff;
+}
+.menu1link li a:hover {
+  color: #ffc107;
+}
+.slicknav_menu {
+  display: none;
+}
+#menu {
+  display: none;
 }

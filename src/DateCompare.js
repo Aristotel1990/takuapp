@@ -1,15 +1,8 @@
 import React,{useEffect, useState} from 'react'
-import { Popconfirm,Button,Alert,Space} from 'antd';
 import 'antd/dist/antd.css';
-import axios from 'axios';
-import ModalData from './ModalData';
-import ModalStatus from './ModalStatus';
-import ModalFalse from './ModalFalse';
-import { QuestionCircleOutlined } from '@ant-design/icons';
 import { useStateValue } from "./StateProvider";
 import { MDBDataTable } from "mdbreact";
 import 'bootstrap-css-only/css/bootstrap.min.css';
-import FalseStatus from './FalseStatus';
 function DateCompare({history}) {
   const [{ compDate,token }, dispatch] = useStateValue();
   const [state, setState] = useState([])

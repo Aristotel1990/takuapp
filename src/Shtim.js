@@ -5,13 +5,14 @@ import { useStateValue } from "./StateProvider";
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import moment from'moment';
-
+import { useEffect } from 'react';
+import './shtim.css';
 const layout = {
     labelCol: {
       span: 8,
     },
     wrapperCol: {
-      span: 8,
+      span: 16,
     },
   };
   const validateMessages = {
@@ -33,7 +34,7 @@ function Shtim({history}) {
     const data = {...values,user:user,id:uuidv4(),date:StartDate}
     console.log(data)
       try {
-      const response =await axios.post(`https://taku-app.herokuapp.com/data`,data);
+      const response =await axios.post(`http://localhost:3090/data`,data);
       console.log(response.data)
        dispatch({
           type: "ADD_TO_BASKET",
@@ -49,15 +50,24 @@ function Shtim({history}) {
             user:user,
             date:response.data.date,
           },
-          payload:null
+          payload:"U rregjistrua",
         })
      } catch (e) {
         dispatch({type:'AUTH_ERROR',payload:'Nr i celualrit ekziston njehere'})
      }
       };
+      useEffect(() => {
+         
+        
+        dispatch({
+          type:'AUTH_ERROR',payload:null
+        })
+         }, [])
+      
     return (
-        <div>
-              <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+        <div className="container-fluid" >
+         
+              <Form  {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
       <Form.Item
         name={'emri'}
         label="Emri"
@@ -108,7 +118,9 @@ function Shtim({history}) {
       </Button>
       </Form.Item>
     </Form>
-    <h6>{errore?errore:""}</h6>
+    <h6 className="error">{errore?errore:""}</h6>
+           
+             
         </div>
     )
 }

@@ -19,7 +19,7 @@ export const initialState = {
         return {
           ...state,
           basket: [...state.basket, action.item],
-          errore:action.payload
+          errore:action.payload,
         };
        case 'MERR_TEDHENA':
           return{...state,basket:action.item,user:action.user}  
