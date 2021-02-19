@@ -42,12 +42,12 @@ function ModalData({record,history}) {
           itemm: pako,
           payload:null
         })
-        history.push('/feature')
+        history.push('/')
 
       };
 
   const handleCancel = () => {
-    history.push('/feature')
+    history.push('/')
 
     setIsModalVisible(false);
   };

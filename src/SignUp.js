@@ -33,7 +33,7 @@ function SignUp({history}){
          }catch(e){
          dispatch({type:"AUTH_ERROR",payload:'Useri ekziston'})
          }
-         history.push('/feature')
+         history.push('/')
       };
     
       const onFinishFailed = (errorInfo) => {

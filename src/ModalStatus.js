@@ -15,13 +15,13 @@ function ModalStatus(props) {
 
   const handleOk = () => {
     setIsModalVisible(false);
-    props.history.push('/feature')
+    props.history.push('/')
 
   };
 
   const handleCancel = () => {
     setIsModalVisible(false);
-    props.history.push('/feature')
+    props.history.push('/')
 
   };
   const onstatus2=()=>{
@@ -34,7 +34,7 @@ function ModalStatus(props) {
           user:user,
           date:date,
         })
-        props.history.push('/feature')
+        props.history.push('/')
 
         setIsModalVisible(false);
       
@@ -50,7 +50,7 @@ function ModalStatus(props) {
         user:user,
         date:time,
       })
-      props.history.push('/feature')
+      props.history.push('/')
 
       setIsModalVisible(false)
     
@@ -66,7 +66,7 @@ const onstatus0=()=>{
       date:date
 
     })
-    props.history.push('/feature')
+    props.history.push('/')
 
     setIsModalVisible(false)
   
