@@ -24,7 +24,7 @@ function SignUp({history}){
      const onFinish =async (values,callback) =>{
        
         try{
-          const response = await axios.post('http://localhost:3090/signup',values);
+          const response = await axios.post('https://taku-app.herokuapp.com/signup',values);
          dispatch({type:"AUTH_USER",token:response.data.token})
          localStorage.setItem('token',response.data.token)
          localStorage.setItem('user',response.data.user.username)

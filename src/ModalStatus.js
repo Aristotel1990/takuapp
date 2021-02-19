@@ -24,9 +24,9 @@ function ModalStatus(props) {
     props.history.push('/')
 
   };
-  const onstatus2=async()=>{
+  const onstatus2=()=>{
     const nrSt=2;
-     await  axios.post(`http://localhost:3090/status/${_id}`,{status:nrSt,user:user,date:date});
+       axios.post(`https://taku-app.herokuapp.com/status/${_id}`,{status:nrSt,user:user,date:date});
        dispatch({
           type: "UPDATE_STATUS",
           id:_id,
@@ -39,9 +39,9 @@ function ModalStatus(props) {
         setIsModalVisible(false);
       
   }
-  const onstatus1=async()=>{
+  const onstatus1=()=>{
     const nrSt=1;
-   await axios.post(`http://localhost:3090/status/${_id}`,{status:nrSt,user:user,date:time});
+    axios.post(`https://taku-app.herokuapp.com/status/${_id}`,{status:nrSt,user:user,date:time});
     console.log(user)
      dispatch({
         type: "UPDATE_STATUS",
@@ -55,9 +55,9 @@ function ModalStatus(props) {
       setIsModalVisible(false)
     
 }
-const onstatus0=async()=>{
+const onstatus0=()=>{
   const nrSt=0;
-  await axios.post(`http://localhost:3090/status/${_id}`,{status:nrSt,user:user,date:date});
+   axios.post(`https://taku-app.herokuapp.com/status/${_id}`,{status:nrSt,user:user,date:date});
    dispatch({
       type: "UPDATE_STATUS",
       id:_id,

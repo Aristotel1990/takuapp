@@ -10,6 +10,7 @@ import { useStateValue } from "./StateProvider";
 import { MDBDataTable } from "mdbreact";
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import FalseStatus from './FalseStatus';
+import Shtim from './Shtim';
 import moment from'moment';
 import './newtable.css';
 
@@ -20,12 +21,12 @@ function NewTable({history}) {
   </Popover>),action1:(<div>{user===record.user ?(<div ><ModalData history={history} record={record}/>{" "}
     <Popconfirm 
     onConfirm={()=>{
-     axios.post(`http://localhost:3090/${record._id}`)
+     axios.post(`https://taku-app.herokuapp.com/${record._id}`)
      dispatch({
       type:'DELETE_ITEM',
       id:record._id
      })
-     history.push('/')
+     history.push('/feature')
    }}
     icon={<QuestionCircleOutlined 
     style={{ color: 'red' }} />}>
@@ -136,10 +137,10 @@ history.push('/comp')
 useEffect(() => {
   async function merr(){
   if(!token){
-    history.push('/datas')
+    history.push('/')
   }else{
    
-      const response = await axios.get('http://localhost:3090/data');
+      const response = await axios.get('https://taku-app.herokuapp.com/data');
       dispatch({type:'MERR_TEDHENA',item:response.data,user:localStorage.getItem('user')})
       console.log('teli')
       
@@ -169,11 +170,12 @@ useEffect(() => {
     <h1></h1>
    
     <MDBDataTable
+    className="home"
     striped 
     bordered
     hover
     data={data}
-    /> </div>):(<div className="home"
+    /> </div>):(<div           className="home"
     > 
       <MDBDataTable
 
