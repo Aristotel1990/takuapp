@@ -31,7 +31,7 @@ function Login({history}) {
         dispatch({type:"AUTH_USER",token:response.data.token,user:response.data.user.username})
      
       
-       history.push('/feature')
+       history.push('/')
       };
     
       const onFinishFailed = (errorInfo) => {

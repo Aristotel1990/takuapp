@@ -137,7 +137,7 @@ history.push('/comp')
 useEffect(() => {
   async function merr(){
   if(!token){
-    history.push('/')
+    history.push('/datas')
   }else{
    
       const response = await axios.get('https://taku-app.herokuapp.com/data');

@@ -18,7 +18,7 @@ ReactDOM.render(
       <App >
         <Route exact path="/signin" component={Login}/>    
         <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/feature" component={NewTable}/>
+        <Route exact path="/" component={NewTable}/>
         <Route axact path="/comp" component={DateCompare}/>
       </App>
       </Router>

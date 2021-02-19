@@ -36,7 +36,7 @@ function Header({history}) {
                 <div id="menu1" className="dmenu db">
         <div className="menuleft ">
           
-          <Link to="/feature" >
+          <Link to="/" >
                <h1>Tido</h1>
                 </Link>
          
@@ -61,8 +61,8 @@ function Header({history}) {
       >
        <Shtim/>
       </Drawer>
-            <li><Link to="/feature" >Home</Link></li>
-            <li><Link to="/" onClick={onsignout}>Sign Out</Link></li>
+            <li><Link to="/" >Home</Link></li>
+            <li><Link to="/dataa" onClick={onsignout}>Sign Out</Link></li>
           </ul>
         </div>
       </div>
