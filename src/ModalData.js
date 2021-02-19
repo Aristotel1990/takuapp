@@ -36,7 +36,7 @@ function ModalData({record,history}) {
     const pako={...values,user:user,date:time} 
     console.log(pako)
     setIsModalVisible(false);
-       axios.post(`https://taku-app.herokuapp.com/edit/${_id}`,pako);
+       axios.post(`http://localhost:3090/edit/${_id}`,pako);
        dispatch({
           type: 'UPDATE_DATA',
           itemm: pako,
