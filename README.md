@@ -9,7 +9,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [https://taku-app.herokuapp.com](https://taku-app.herokuapp.com) to view it in the browser.
+Open [https://relaxed-euclid-fdfeb1.netlify.app](https://taku-app.herokuapp.com) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
