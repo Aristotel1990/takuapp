@@ -21,13 +21,13 @@ const validateMessages = {
   }
 };
 
-function ModalData({record,history}) {
+function ModalData({record,history,koha}) {
   const {_id,id,emri,subjekti,qyteti,nr,komenti,status}=record;
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [{user}, dispatch] = useStateValue();
   const showModal = () => {
     setIsModalVisible(true);
-    console.log(record)
+    console.log(koha)
   };
 
 
@@ -109,10 +109,12 @@ function ModalData({record,history}) {
 
           </FormItem>
           <FormItem  name={'date'} 
+          initialValue={moment(koha,'YYYY-MM-DD')}
           label="Data"
           { ...layout }
         >
           <DatePicker
+          defaultValue={moment(koha,'YYYY-MM-DD')}
           />
           </FormItem>
 

@@ -18,7 +18,7 @@ function NewTable({history}) {
     const [{ basket, user,token }, dispatch] = useStateValue();
     const arr =basket.map(record=>record? {...record,komenti:(<Popover  content={record.komenti} title="Komenti" trigger="hover">
     {<Button>Komenti</Button>}
-  </Popover>),action1:(<div>{user===record.user ?(<div ><ModalData history={history} record={record}/>{" "}
+  </Popover>),action1:(<div>{user===record.user ?(<div ><ModalData history={history} record={record} koha={moment(record.date).format()}/>{" "}
     <Popconfirm 
     onConfirm={()=>{
      axios.post(`https://taku-app.herokuapp.com/${record._id}`)
@@ -137,7 +137,7 @@ history.push('/comp')
 useEffect(() => {
   async function merr(){
   if(!token){
-    history.push('/')
+    history.push('/datas')
   }else{
    
       const response = await axios.get('https://taku-app.herokuapp.com/data');
