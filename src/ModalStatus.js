@@ -26,8 +26,6 @@ function ModalStatus(props) {
   };
   const onstatus2=()=>{
     const nrSt=2;
-       axios.post(`https://taku-app.herokuapp.com/status/${_id}`,{status:nrSt,user:user,date:date});
-
        axios.post(`https://taku-app.herokuapp.com/status/${_id}`,{status:nrSt,user:user,date:date})
        dispatch({
           type: "UPDATE_STATUS",
