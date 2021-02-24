@@ -26,7 +26,7 @@ function NewTable({history}) {
       type:'DELETE_ITEM',
       id:record._id
      })
-     history.push('/feature')
+     history.push('/')
    }}
     icon={<QuestionCircleOutlined 
     style={{ color: 'red' }} />}>
