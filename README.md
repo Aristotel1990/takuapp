@@ -10,9 +10,9 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 <<<<<<< HEAD
-Open [https://relaxed-euclid-fdfeb1.netlify.app/](https://agjente.herokuapp.com/) to view it in the browser.
+Open [https://relaxed-euclid-fdfeb1.netlify.app/](https:/agjente.herokuapp.com) to view it in the browser.
 =======
-Open [https://relaxed-euclid-fdfeb1.netlify.app](https://agjente.herokuapp.com/) to view it in the browser.
+Open [https://relaxed-euclid-fdfeb1.netlify.app](https:/agjente.herokuapp.com) to view it in the browser.
 
 > > > > > > > 40a2decf2d7199772ec9c0be446beb601ac50636
 

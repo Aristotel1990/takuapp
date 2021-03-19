@@ -21,7 +21,7 @@ function FalseStatus(props) {
   };
   const onstatus2=()=>{
     const nrSt=2;
-       axios.post(`https://agjente.herokuapp.com//status/${_id}`,{status:nrSt,user:user});
+       axios.post(`https:/agjente.herokuapp.com/status/${_id}`,{status:nrSt,user:user});
        dispatch({
           type: "UPDATE_STATUS",
           id:_id,
@@ -34,7 +34,7 @@ function FalseStatus(props) {
   }
   const onstatus1=()=>{
     const nrSt=1;
-    axios.post(`https://agjente.herokuapp.com//status/${_id}`,{status:nrSt,user:user});
+    axios.post(`https:/agjente.herokuapp.com/status/${_id}`,{status:nrSt,user:user});
     console.log(user)
      dispatch({
         type: "UPDATE_STATUS",
@@ -47,7 +47,7 @@ function FalseStatus(props) {
 }
 const onstatus0=()=>{
   const nrSt=0;
-   axios.post(`https://agjente.herokuapp.com//status/${_id}`,{status:nrSt,user:user});
+   axios.post(`https:/agjente.herokuapp.com/status/${_id}`,{status:nrSt,user:user});
    dispatch({
       type: "UPDATE_STATUS",
       id:_id,
