@@ -5,6 +5,7 @@ import { useStateValue } from "./StateProvider";
 import FormItem from 'antd/lib/form/FormItem';
 import axios from 'axios';
 import moment from 'moment';
+import { set } from 'lodash';
 const layout = {
   labelCol: {
     span: 8,
@@ -23,6 +24,7 @@ const validateMessages = {
 
 function ModalData({record,history,koha}) {
   const {_id,id,emri,subjekti,qyteti,nr,komenti,status}=record;
+  const [time, setTime] = useState(koha)
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [{user}, dispatch] = useStateValue();
   const showModal = () => {
@@ -30,20 +32,21 @@ function ModalData({record,history,koha}) {
     console.log(koha)
   };
 
-
-    const onFinish = (values) => {
-      const time = moment(values.date).format()
-    const pako={...values,user:user,date:time} 
-    console.log(pako)
-    setIsModalVisible(false);
-       axios.post(`https://taku-app.herokuapp.com/edit/${_id}`,pako);
+  const ontimechange=(date,datesting)=>{
+    setTime(datesting)
+  }    
+  const onFinish = (values) => {
+    const datemod=moment(time).format();
+    const pako={...values,user:user,date:datemod} 
+    
+       axios.post(`http://localhost:3090/edit/${_id}`,pako);
        dispatch({
           type: 'UPDATE_DATA',
           itemm: pako,
           payload:null
         })
         history.push('/')
-
+        setIsModalVisible(false);
       };
 
   const handleCancel = () => {
@@ -109,12 +112,11 @@ function ModalData({record,history,koha}) {
 
           </FormItem>
           <FormItem  name={'date'} 
-          initialValue={moment(koha,'YYYY-MM-DD')}
           label="Data"
           { ...layout }
         >
           <DatePicker
-          defaultValue={moment(koha,'YYYY-MM-DD')}
+          onChange={ontimechange}
           />
           </FormItem>
 

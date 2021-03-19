@@ -1,5 +1,5 @@
-import React,{useEffect} from 'react'
-import { Popconfirm,Button,Alert,Space,Popover } from 'antd';
+import React,{useEffect, useState} from 'react'
+import { Popconfirm,Button,Alert,Space,Popover,Modal } from 'antd';
 import 'antd/dist/antd.css';
 import axios from 'axios';
 import ModalData from './ModalData';
@@ -10,33 +10,33 @@ import { useStateValue } from "./StateProvider";
 import { MDBDataTable } from "mdbreact";
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import FalseStatus from './FalseStatus';
-import Shtim from './Shtim';
 import moment from'moment';
 import './newtable.css';
 
 function NewTable({history}) {
+  
     const [{ basket, user,token }, dispatch] = useStateValue();
     const arr =basket.map(record=>record? {...record,komenti:(<Popover  content={record.komenti} title="Komenti" trigger="hover">
-    {<Button>Komenti</Button>}
+    {<Button type="ghost">Komenti</Button>}
   </Popover>),action1:(<div>{user===record.user ?(<div ><ModalData history={history} record={record} koha={moment(record.date).format()}/>{" "}
     <Popconfirm 
     onConfirm={()=>{
-     axios.post(`https://taku-app.herokuapp.com/${record._id}`)
+     axios.post(`http://localhost:3090/${record._id}`)
      dispatch({
       type:'DELETE_ITEM',
       id:record._id
      })
-     history.push('/feature')
+     history.push('/')
    }}
     icon={<QuestionCircleOutlined 
     style={{ color: 'red' }} />}>
-   <a href="#">Delete</a>
+   <Button type="ghost">Delete</Button>
  </Popconfirm>
    </div>):(<div ><ModalFalse  record={record}/>{" "}
     <Popconfirm 
     icon={<QuestionCircleOutlined 
     style={{ color: 'red' }} />}>
-   <a href="#">Delete</a>
+   <Button type="ghost">Delete</Button>
  </Popconfirm>
    </div>)}</div>),action2:(<div>{user===record.user ?(<div > <ModalStatus record={record} history={history}/>
             </div>):(<div > <FalseStatus record={record}/>
@@ -140,7 +140,7 @@ useEffect(() => {
     history.push('/datas')
   }else{
    
-      const response = await axios.get('https://taku-app.herokuapp.com/data');
+      const response = await axios.get('http://localhost:3090/data');
       dispatch({type:'MERR_TEDHENA',item:response.data,user:localStorage.getItem('user')})
       console.log('teli')
       

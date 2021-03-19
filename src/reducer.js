@@ -7,7 +7,7 @@ export const initialState = {
     ,
     token: localStorage.getItem('token'),
     errore:null,
-    compDate:null
+    compDate:null,
   };
   
   // Selector
@@ -45,9 +45,8 @@ export const initialState = {
             const {id,status,user} = action;   
             const det=action.date;
             const a = _.find(state.basket,{_id:id});
-            
+
             const ar =state.basket.map(x=>x._id===a._id?{...x,status:status,user:user,date:det } : x )
-            
             if(a){
             return{...state,basket:ar}
             }

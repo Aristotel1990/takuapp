@@ -3,6 +3,8 @@ import { Modal, Button } from 'antd';
 import 'antd/dist/antd.css';
 import { useStateValue } from "./StateProvider";
 import axios from 'axios';
+import './status.css';
+
 function ModalStatus(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [{ user}, dispatch] = useStateValue();
@@ -26,12 +28,7 @@ function ModalStatus(props) {
   };
   const onstatus2=()=>{
     const nrSt=2;
-<<<<<<< HEAD
-       axios.post(`https://taku-app.herokuapp.com/status/${_id}`,{status:nrSt,user:user,date:date});
-     
-=======
-       axios.post(`https://taku-app.herokuapp.com/status/${_id}`,{status:nrSt,user:user,date:date})
->>>>>>> 40a2decf2d7199772ec9c0be446beb601ac50636
+       axios.post(`http://localhost:3090/status/${_id}`,{status:nrSt,user:user,date:date})
        dispatch({
           type: "UPDATE_STATUS",
           id:_id,
@@ -46,12 +43,8 @@ function ModalStatus(props) {
   }
   const onstatus1=()=>{
     const nrSt=1;
-    axios.post(`https://taku-app.herokuapp.com/status/${_id}`,{status:nrSt,user:user,date:time});
-<<<<<<< HEAD
-=======
+    axios.post(`http://localhost:3090/status/${_id}`,{status:nrSt,user:user,date:time});
 
- 
->>>>>>> 40a2decf2d7199772ec9c0be446beb601ac50636
      dispatch({
         type: "UPDATE_STATUS",
         id:_id,
@@ -66,7 +59,7 @@ function ModalStatus(props) {
 }
 const onstatus0=()=>{
   const nrSt=0;
-   axios.post(`https://taku-app.herokuapp.com/status/${_id}`,{status:nrSt,user:user,date:date});
+   axios.post(`http://localhost:3090/status/${_id}`,{status:nrSt,user:user,date:date});
 
    dispatch({
       type: "UPDATE_STATUS",
@@ -81,14 +74,21 @@ const onstatus0=()=>{
     setIsModalVisible(false)
   
 }
+  let buttonText = 'Percakto Statusin'
+  if (props.record.status===0) { buttonText='Percakto Statusin'}
+  else if(props.record.status===1){buttonText= 'Perfunduar'}
+  else{
+     buttonText='Paperfunduar'
+  }
+
     return (
         <div  >
-        <Button style={props.record.status===1?{ backgroundColor: 'green'}:props.record.status===0?{ backgroundColor: 'white'}:{ backgroundColor: 'orange'}} onClick={showModal}>
-             Percakto Statusin</Button>
+        <Button style={props.record.status===1?{ backgroundColor: 'green',width:'100%'}:props.record.status===0?{ backgroundColor: 'white',color:'black',width:'100%'}:{ backgroundColor: 'orange',width:'100%'}} onClick={showModal}>
+           <div style={props.record.status===1?{ color: 'white'}:props.record.status===0?{ color:'black'}:{ color: 'white'}}>{buttonText} </div> </Button>
         <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
         <Button onClick={onstatus2}style={{backgroundColor:'orange'}} type="ghost">Paperfunduar</Button>{"    "}
         <Button onClick={onstatus1} style={{backgroundColor:'green'}} type="ghost">Perfunduar</Button>
-        <Button onClick={onstatus0} type="ghost">Paveprim</Button>
+        <Button onClick={onstatus0}  type="ghost">Paveprim</Button>
 
 
       </Modal>
