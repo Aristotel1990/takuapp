@@ -140,7 +140,7 @@ useEffect(() => {
     history.push('/datas')
   }else{
    
-      const response = await axios.get('https:/agjente.herokuapp.com/data');
+      const response = await axios.get('https://agjente.herokuapp.com/data');
       dispatch({type:'MERR_TEDHENA',item:response.data,user:localStorage.getItem('user')})
       console.log('teli')
       
