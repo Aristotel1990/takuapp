@@ -39,7 +39,7 @@ function ModalData({record,history,koha}) {
     const datemod=moment(time).format();
     const pako={...values,user:user,date:datemod} 
     
-       axios.post(`https:/agjente.herokuapp.com/edit/${_id}`,pako);
+       axios.post(`https://agjente.herokuapp.com/edit/${_id}`,pako);
        dispatch({
           type: 'UPDATE_DATA',
           itemm: pako,
