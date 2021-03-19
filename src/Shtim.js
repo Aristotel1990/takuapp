@@ -34,7 +34,7 @@ function Shtim({history}) {
     const data = {...values,user:user,id:uuidv4(),date:StartDate}
     console.log(data)
       try {
-      const response =await axios.post(`https://taku-app.herokuapp.com/data`,data);
+      const response =await axios.post(`https://agjente.herokuapp.com//data`,data);
       console.log(response.data)
        dispatch({
           type: "ADD_TO_BASKET",
