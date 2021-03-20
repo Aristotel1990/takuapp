@@ -15,7 +15,7 @@ import './newtable.css';
 
 function NewTable({history}) {
   
-    const [{ basket, user,token }, dispatch] = useStateValue();
+    const [{ basket, user,token,compDate }, dispatch] = useStateValue();
     const arr =basket.map(record=>record? {...record,komenti:(<Popover  content={record.komenti} title="Komenti" trigger="hover">
     {<Button type="ghost">Komenti</Button>}
   </Popover>),action1:(<div>{user===record.user ?(<div ><ModalData history={history} record={record} koha={moment(record.date).format()}/>{" "}
@@ -142,13 +142,12 @@ useEffect(() => {
    
       const response = await axios.get('https://agjente.herokuapp.com/data');
       dispatch({type:'MERR_TEDHENA',item:response.data,user:localStorage.getItem('user')})
-      console.log('teli')
       
     }
   }
   
   merr();
-   }, [])
+   }, [compDate])
 
 
 
