@@ -21,7 +21,7 @@ function NewTable({history}) {
   </Popover>),action1:(<div>{user===record.user ?(<div ><ModalData history={history} record={record} koha={moment(record.date).format()}/>{" "}
     <Popconfirm 
     onConfirm={()=>{
-     axios.post(`https:/agjente.herokuapp.com/${record._id}`)
+     axios.post(`https://agjente.herokuapp.com/${record._id}`)
      dispatch({
       type:'DELETE_ITEM',
       id:record._id
